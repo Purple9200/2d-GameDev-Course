@@ -11,6 +11,7 @@ const LOOT_SCENES := [
 
 func loot() -> void:
 	_animation_player.play("open")
+	create_pickup()
 
 
 func create_pickup() -> void:
