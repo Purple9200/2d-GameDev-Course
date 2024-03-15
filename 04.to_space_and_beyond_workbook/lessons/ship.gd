@@ -1,14 +1,17 @@
 extends Sprite2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-var velocity := Vector2(500,0)
+var max_speed :=600
+var velocity := Vector2(0,0)
 
 func _process(delta: float) -> void:
-	position += velocity * delta
-	rotation = velocity.angle()
+	var direction := Vector2(0,0)
+	direction.x=Input.get_axis("move_left","move_right")
+	direction.y=Input.get_axis("move_up","move_down")
+	
+	if direction.length() > 1.0:
+		direction = direction.normalized()
+	
+	velocity =direction*max_speed
+	position+= velocity*delta
+	if direction.length() > 0.0:
+		rotation= velocity.angle()
+
