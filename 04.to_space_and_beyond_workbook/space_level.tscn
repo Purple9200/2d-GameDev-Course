@@ -17,7 +17,6 @@ points = PackedVector2Array(0, 0, 33.3333, 0, 66.6667, 0)
 [node name="SideThruster" parent="Ship" instance=ExtResource("3_y71sf")]
 position = Vector2(-50, 20)
 rotation = 1.12855
-scale = Vector2(0.25, 0.25)
 
 [node name="SideThruster2" parent="Ship" instance=ExtResource("3_y71sf")]
 position = Vector2(-49, -22)
