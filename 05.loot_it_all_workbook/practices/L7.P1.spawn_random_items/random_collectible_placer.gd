@@ -12,4 +12,3 @@ func _on_timer_timeout() -> void:
 	var random_item_scene: PackedScene = collectible_scenes.pick_random()
 	var item_instance := random_item_scene.instantiate()
 	add_child(item_instance)
-
