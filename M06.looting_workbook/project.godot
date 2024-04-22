@@ -15,11 +15,14 @@ config/tags=PackedStringArray("workbook")
 run/main_scene="res://lessons/mini_dungeon.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon_looting.png"
+<<<<<<< Updated upstream
 
 [autoload]
 
 UITestPanel="*res://addons/gdquest_practice_framework/tester/ui_test_panel.tscn"
 Metadata="*res://addons/gdquest_practice_framework/practice_solutions/metadata.gd"
+=======
+>>>>>>> Stashed changes
 
 [display]
 
