@@ -1,16 +1,19 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://cvm5lbbgygd4j"]
 
-[ext_resource type="PackedScene" path="res://practices/L3.P1.hover_the_balloon/balloon_hover.tscn" id="1_biewv"]
-[ext_resource type="Script" path="res://practices/L3.P1.hover_the_balloon/balloon_hover.gd" id="2_mo74b"]
+[ext_resource type="PackedScene" uid="uid://d3fxoxxx6e4b2" path="res://practices/L3.P1.hover_the_balloon/balloon_hover.tscn" id="1_biewv"]
+[ext_resource type="Shader" path="res://lessons/chest/group_outline.gdshader" id="2_1rhtp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x400d"]
+shader = ExtResource("2_1rhtp")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 4.0
+shader_parameter/viewport_scale = Vector2(1, 1)
 
 [node name="HoverTheBalloon" type="Node2D"]
 metadata/_edit_horizontal_guides_ = []
 
-[node name="BalloonHover" type="Area2D" parent="." instance=ExtResource("1_biewv")]
-position = Vector2(960, 540)
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("2_mo74b")
+[node name="BalloonHover" parent="." instance=ExtResource("1_biewv")]
+material = SubResource("ShaderMaterial_x400d")
 
 [node name="ExtraVisuals" type="Node" parent="."]
 
