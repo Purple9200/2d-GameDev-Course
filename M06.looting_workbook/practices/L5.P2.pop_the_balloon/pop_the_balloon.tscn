@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd0ytbsjoiyaf"]
+[gd_scene load_steps=2 format=3 uid="uid://cx1xoa2lw0feq"]
 
-[ext_resource type="PackedScene" uid="uid://bq2xmfcqduiko" path="res://practices/L5.P2.pop_the_balloon/balloon_pop.tscn" id="1_enrvy"]
+[ext_resource type="PackedScene" path="res://practices/L5.P2.pop_the_balloon/balloon_pop.tscn" id="1_8yrfx"]
 
 [node name="PopTheBalloon" type="Node2D"]
 metadata/_edit_horizontal_guides_ = []
 
-[node name="BalloonPop" parent="." instance=ExtResource("1_enrvy")]
+[node name="BalloonPop" parent="." instance=ExtResource("1_8yrfx")]
 
 [node name="ExtraVisuals" type="Node" parent="."]
 

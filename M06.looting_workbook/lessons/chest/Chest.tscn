@@ -1,37 +1,25 @@
-[gd_scene load_steps=11 format=3 uid="uid://b73j7umkoy5u5"]
+[gd_scene load_steps=14 format=3 uid="uid://6550exx3hxcx"]
 
-[ext_resource type="Shader" path="res://lessons/chest/group_outline.gdshader" id="1_84yqh"]
-[ext_resource type="Script" path="res://Chest.gd" id="1_wh3ot"]
-[ext_resource type="Texture2D" uid="uid://c3hwsm5ugp8qw" path="res://lessons/chest/bottom.png" id="1_y07ey"]
-[ext_resource type="Texture2D" uid="uid://bnem1cahhoxdk" path="res://lessons/chest/top.png" id="2_ut13p"]
-[ext_resource type="Texture2D" uid="uid://bu2jin246nel5" path="res://lessons/chest/lock.png" id="3_1v4ao"]
+[ext_resource type="Script" path="res://lessons/chest/chest.gd" id="1_nf35e"]
+[ext_resource type="Texture2D" uid="uid://c3hwsm5ugp8qw" path="res://lessons/chest/bottom.png" id="1_o0pbk"]
+[ext_resource type="Shader" path="res://lessons/chest/group_outline.gdshader" id="1_t156v"]
+[ext_resource type="PackedScene" uid="uid://0i1g0cunmseb" path="res://lessons/items/apple.tscn" id="2_46b36"]
+[ext_resource type="Texture2D" uid="uid://bnem1cahhoxdk" path="res://lessons/chest/top.png" id="2_s8ft4"]
+[ext_resource type="Texture2D" uid="uid://bu2jin246nel5" path="res://lessons/chest/lock.png" id="3_d5t8w"]
+[ext_resource type="PackedScene" uid="uid://ctqyr0ufyoktk" path="res://lessons/items/key.tscn" id="3_paqov"]
+[ext_resource type="PackedScene" uid="uid://hdxqgspfcaur" path="res://lessons/items/potion.tscn" id="4_kfgab"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1ert"]
-size = Vector2(96, 82)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rr38l"]
+size = Vector2(98, 81)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5tf4p"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2uu8w"]
 resource_local_to_scene = true
-shader = ExtResource("1_84yqh")
+shader = ExtResource("1_t156v")
 shader_parameter/line_color = Color(0, 0, 0, 1)
-shader_parameter/line_thickness = 10.03
+shader_parameter/line_thickness = 3.0
 shader_parameter/viewport_scale = Vector2(1, 1)
 
-[sub_resource type="Animation" id="Animation_d6mnu"]
-resource_name = "Open"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasGroup/Top:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1, -40), Vector2(51, -101), Vector2(108, 39)]
-}
-
-[sub_resource type="Animation" id="Animation_u2j8l"]
+[sub_resource type="Animation" id="Animation_u1pmd"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -43,39 +31,55 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, -40)]
+"values": [Vector2(2.08165e-12, -20)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rtuhd"]
+[sub_resource type="Animation" id="Animation_ska5u"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasGroup/Top:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2.08165e-12, -20), Vector2(48, -80), Vector2(105, 64)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qguvq"]
 _data = {
-"Open": SubResource("Animation_d6mnu"),
-"RESET": SubResource("Animation_u2j8l")
+"RESET": SubResource("Animation_u1pmd"),
+"open": SubResource("Animation_ska5u")
 }
 
 [node name="Chest" type="Area2D"]
-script = ExtResource("1_wh3ot")
+position = Vector2(2.08165e-12, -23)
+script = ExtResource("1_nf35e")
+possible_items = Array[PackedScene]([ExtResource("2_46b36"), ExtResource("3_paqov"), ExtResource("4_kfgab")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(1, -26)
-shape = SubResource("RectangleShape2D_o1ert")
+position = Vector2(0, -8.5)
+shape = SubResource("RectangleShape2D_rr38l")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
-material = SubResource("ShaderMaterial_5tf4p")
+material = SubResource("ShaderMaterial_2uu8w")
 
 [node name="Bottom" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(1, -20)
-texture = ExtResource("1_y07ey")
+position = Vector2(2.08165e-12, -4)
+texture = ExtResource("1_o0pbk")
 
 [node name="Top" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(1, -40)
-texture = ExtResource("2_ut13p")
+position = Vector2(2.08165e-12, -20)
+texture = ExtResource("2_s8ft4")
 
 [node name="Lock" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(1, -14)
-texture = ExtResource("3_1v4ao")
+position = Vector2(2.08165e-12, 4)
+texture = ExtResource("3_d5t8w")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_rtuhd")
+"": SubResource("AnimationLibrary_qguvq")
 }
