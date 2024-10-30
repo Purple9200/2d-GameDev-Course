@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkr74exl2v3cc"]
+[gd_scene load_steps=6 format=3 uid="uid://bkr74exl2v3cc"]
 
-[ext_resource type="Texture2D" uid="uid://ogu21ixgdm50" path="res://assets/test.svg" id="1_cov68"]
+[ext_resource type="Shader" path="res://assets/sliding_background.gdshader" id="1_w54hk"]
+[ext_resource type="Texture2D" uid="uid://bnly1gkbxw6b5" path="res://assets/bubble_pattern.png" id="2_xv82a"]
+[ext_resource type="Texture2D" uid="uid://copkt78vgp37i" path="res://assets/sophia.png" id="3_g283d"]
+[ext_resource type="Texture2D" uid="uid://d000xjtr4iqtk" path="res://assets/emotion_regular.png" id="4_n0pdt"]
 
-[node name="Control" type="Control"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_25ufm"]
+shader = ExtResource("1_w54hk")
+shader_parameter/bg_color = Color(1, 0.94902, 0.756863, 1)
+shader_parameter/pattern_color = Color(1, 0.905882, 0.490196, 1)
+shader_parameter/pattern_size = 256.0
+shader_parameter/pattern_sampler = ExtResource("2_xv82a")
+
+[node name="Dialogue" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,12 +20,65 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_25ufm")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_cov68")
+
+[node name="Body" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 399.0
+offset_right = -269.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_g283d")
 expand_mode = 1
+stretch_mode = 5
+
+[node name="Expression" type="TextureRect" parent="Body"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_n0pdt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 560.0
+offset_right = 1.0
+offset_bottom = -441.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hello World!	"
+
+[node name="NextButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -95.0
+offset_right = -38.0
+offset_bottom = -34.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Next
+"
