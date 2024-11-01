@@ -1,9 +1,9 @@
 extends ColorRect
 
 var items: Array[String] = [
-	"They prefer binary trees.",
-	"There's no Wi-Fi signal in the forest.",
 	"It has too many bugs!",
+	"There's no Wi-Fi signal in the forest.",
+	"They prefer binary trees.",
 	"They can't Ctrl+S a sunset.",
 	"Nature doesn't have a code review process.",
 ]

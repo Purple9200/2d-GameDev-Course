@@ -19,13 +19,11 @@ func _ready() -> void:
 
 
 func show_text() -> void:
-	# Make sure to display the text
-	pass
-
-
+	var current_item := items[item_index]
+	rich_text_label.text = current_item
 # Increments the index each time is called.
 func advance() -> void:
-	# make sure to increment the `item_index`
+	item_index += 1
 	if item_index >= items.size():
 		item_index = 0
-	# Don't forget to call the show_text function
+	show_text()
