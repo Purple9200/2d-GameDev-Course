@@ -42,4 +42,4 @@ Button/styles/pressed = ExtResource("2_o0te3")
 HBoxContainer/constants/separation = 20
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/styles/normal = SubResource("StyleBoxFlat_0sb3j")
-VBoxContainer/constants/separation = 4
+VBoxContainer/constants/separation = 20
