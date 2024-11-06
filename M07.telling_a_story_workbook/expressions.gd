@@ -9,10 +9,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-@onready var body = $Body
-@onready var expression = $Body/Expression
-@onready var button_sophia = $VBoxContainer/HBoxContainer/ButtonSophia
-@onready var button_pink = $VBoxContainer/HBoxContainer/ButtonPink
-@onready var button_regular = $VBoxContainer/HBoxContainer2/ButtonRegular
-@onready var button_sad = $VBoxContainer/HBoxContainer2/ButtonSad
-@onready var button_happy = $VBoxContainer/HBoxContainer2/ButtonHappy
+@onready var body = %Body
+@onready var expression = %Expression
+@onready var button_sophia = %ButtonSophia
+@onready var button_pink = %ButtonPink
+@onready var button_regular = %ButtonRegular
+@onready var button_happy = %ButtonHappy

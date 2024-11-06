@@ -32,6 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Body" type="TextureRect" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,6 +44,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Expression" type="TextureRect" parent="Body"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,11 +67,13 @@ metadata/_edit_group_ = true
 layout_mode = 2
 
 [node name="ButtonSophia" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Sophia
 "
 
 [node name="ButtonPink" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Pink
 "
@@ -78,13 +82,16 @@ text = "Pink
 layout_mode = 2
 
 [node name="ButtonRegular" type="Button" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Regular"
 
 [node name="ButtonSad" type="Button" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Sad"
 
 [node name="ButtonHappy" type="Button" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Happy"
