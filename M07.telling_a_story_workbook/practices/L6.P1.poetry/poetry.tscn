@@ -1,18 +1,19 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://ds730vbkqej17"]
 
-[ext_resource type="Material" path="res://practices/L6.P1.poetry/assets/practice_background_material.tres" id="1_u3jth"]
-[ext_resource type="Theme" path="res://practices/L6.P1.poetry/assets/practice_exercises_theme.tres" id="2_e8mnb"]
-[ext_resource type="Script" path="res://practices/L6.P1.poetry/poetry.gd" id="3_bvl5x"]
+[ext_resource type="Material" uid="uid://blciib2n6bpvf" path="res://practices/L6.P1.poetry/assets/practice_background_material.tres" id="1_ve8vw"]
+[ext_resource type="Theme" uid="uid://dt2geayaiwfiv" path="res://practices/L6.P1.poetry/assets/practice_exercises_theme.tres" id="2_e8mnb"]
+[ext_resource type="Script" path="res://practices/L6.P1.poetry/poetry.gd" id="3_uwrxy"]
 
 [node name="Poetry" type="ColorRect"]
-material = ExtResource("1_u3jth")
+material = ExtResource("1_ve8vw")
 custom_minimum_size = Vector2(960, 540)
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_e8mnb")
-script = ExtResource("3_bvl5x")
+script = ExtResource("3_uwrxy")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
