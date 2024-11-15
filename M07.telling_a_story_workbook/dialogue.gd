@@ -1,27 +1,44 @@
 extends Control
 
-## An array of strings. Each string contains the text we want the character to
-## say.
-var dialogue_items: Array[String] = [
-	"Why was 6 afriad of 7?",
-	"Because 789!",
-	"HAHAHAHAHAHHA",
-]
-
 var current_item_index := 0
+var expressions := {
+	"happy": preload("res://assets/emotion_happy.png"),
+	"regular": preload("res://assets/emotion_regular.png"),
+	"sad": preload("res://assets/emotion_sad.png"),
+}
 
 @onready var rich_text_label: RichTextLabel = %RichTextLabel
 @onready var next_button: Button = %NextButton
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
+@onready var body = %Body
+@onready var expression = %Expression
 
-
+var dialogue_items: Array[Dictionary] = [
+	{
+		"expression": expressions["sad"],
+		"text": "I am super stressed about college applications"
+	},
+	{
+		"expression": expressions["regular"],
+		"text": "I know I should be happy"
+	},
+	{
+		"expression": expressions["regular"],
+		"text": "Since I'm done with 3 PIQs"
+	},
+	{
+		"expression": expressions["sad"],
+		"text": "But I still have 1 more left which I have no clue what to write"
+	},
+]
 func _ready() -> void:
 	show_text()
 	next_button.pressed.connect(advance)
 
 func show_text() -> void:
 	var current_item := dialogue_items[current_item_index]
-	rich_text_label.text = current_item
+	rich_text_label.text = current_item["text"]
+	expression.texture = current_item["expression"]
 	rich_text_label.visible_ratio = 0.0
 	var tween := create_tween()
 	var text_appearing_duration := 1.2
