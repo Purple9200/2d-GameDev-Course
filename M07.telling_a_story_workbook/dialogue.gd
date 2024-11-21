@@ -19,27 +19,27 @@ var bodies := {
 var dialogue_items: Array[Dictionary] = [
 	{
 		"expression": expressions["sad"],
-		"text": "I am super stressed about college applications",
+		"text": "I am [tornado freq=3.0]super[/tornado] [shake]stressed[/shake] about college applications",
 		"character":bodies["sophia"],
 	},
 	{
 		"expression": expressions["regular"],
-		"text": "Shouldn't you be happy since you're almost done with your Essays?",
+		"text": "Shouldn't you be [b]happy[/b] since you're almost [b]done[/b] with your [b]Essays?[/b]",
 		"character":bodies["pink"],
 	},
 	{
 		"expression": expressions["regular"],
-		"text": "I know I should be happy since I'm done with 3 PIQs",
+		"text": "I know I should be happy since I'm done with [rainbow val=0.8]3[/rainbow] [rainbow val=0.8]PIQs[/rainbow]",
 		"character":bodies["sophia"],
 	},
 	{
 		"expression": expressions["regular"],
-		"text": "That's great then whats the problem?",
+		"text": "That's great then [u]whats[/u] [u]the[/u] [u]problem?[/u]",
 		"character":bodies["pink"],
 	},
 	{
 		"expression": expressions["sad"],
-		"text": "I still have 1 more left which I have no clue what to write",
+		"text": "I still have 1 more left which I have [wave]no[/wave] [wave]clue[/wave] what to write",
 		"character":bodies["sophia"],
 	},
 ]
