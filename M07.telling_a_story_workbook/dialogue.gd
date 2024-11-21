@@ -39,7 +39,7 @@ var dialogue_items: Array[Dictionary] = [
 	},
 	{
 		"expression": expressions["sad"],
-		"text": "I still have 1 more left which I have [wave]no[/wave] [wave]clue[/wave] what to write",
+		"text": "I still have 1 more left which I have [wave=10]no[/wave] [wave=10]clue[/wave] what to write",
 		"character":bodies["sophia"],
 	},
 ]
