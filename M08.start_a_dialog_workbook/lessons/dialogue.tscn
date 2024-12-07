@@ -81,18 +81,18 @@ bbcode_enabled = true
 text = "Hello World"
 fit_content = true
 
-[node name="ActionButtonsVBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
+[node name="ActionButtonsVBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/ActionButtonsVBoxContainer2"]
-layout_mode = 2
-text = "Test Button"
-
-[node name="Button2" type="Button" parent="VBoxContainer/ActionButtonsVBoxContainer2"]
+[node name="Button" type="Button" parent="VBoxContainer/ActionButtonsVBoxContainer"]
 layout_mode = 2
 text = "Test Button"
 
-[node name="Button3" type="Button" parent="VBoxContainer/ActionButtonsVBoxContainer2"]
+[node name="Button2" type="Button" parent="VBoxContainer/ActionButtonsVBoxContainer"]
+layout_mode = 2
+text = "Test Button"
+
+[node name="Button3" type="Button" parent="VBoxContainer/ActionButtonsVBoxContainer"]
 layout_mode = 2
 text = "Test Button"
 
