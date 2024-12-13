@@ -7,7 +7,6 @@ extends ColorRect
 
 var tween: Tween
 
-# Don't forget to add a few items to the list in the Inspector!
 @export var items_list: Array[PoweredItem] = []
 
 
@@ -15,25 +14,21 @@ func _ready() -> void:
 	for item in items_list:
 		var button := InventorySlotButton.new()
 		grid_container.add_child(button)
-		# Warning! If your list has null values, you will get an error here.
-		# Make sure your list doesn't have empty spots.
 		button.text = item.text
 		button.price = item.price
 		button.pressed.connect(display_item.bind(button.text))
 		button.pressed.connect(display_powerups.bind(item.powerups_list))
 
 
-func display_powerups(powerups_list: Array[Power]) -> void:
-	# Make sure to remove previous children before adding the new ones.
-	# Once you removed all children, loop through the powerups_list array
+func display_powerups(powerups_list: Array[Power]) -> void: 
+	for child in powerups_v_box_container.get_children(): 
+		child.queue_free() 
 	for power in powerups_list:
-		# Create a TextureRect node.
-		# Assign the power's image to the TextureRect node's `texture` property.
-		# Then, add the TextureRect as a child of powerups_v_box_container.
-		pass
+		var power_texture_rect := TextureRect.new() 
+		power_texture_rect.texture = power.image 
+		powerups_v_box_container.add_child(power_texture_rect) 
 
 
-# Displays an item. Requires an item name
 func display_item(text: String) -> void:
 	texture_rect.texture = PracticeIcons.get_texture(text)
 	label.text = text

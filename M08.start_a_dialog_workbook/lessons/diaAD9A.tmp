@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://chprvwfixox2y"]
+[gd_scene load_steps=16 format=3 uid="uid://chprvwfixox2y"]
 
 [ext_resource type="Theme" uid="uid://cxm3e18skt2lj" path="res://lessons/assets/main_theme.tres" id="1_frglg"]
 [ext_resource type="Script" path="res://lessons/dialogue.gd" id="2_n1q1t"]
@@ -9,78 +9,39 @@
 [ext_resource type="Texture2D" uid="uid://d000xjtr4iqtk" path="res://assets/emotion_regular.png" id="6_bayqr"]
 [ext_resource type="Script" path="res://lessons/dialogue_item.gd" id="6_cu74b"]
 [ext_resource type="AudioStream" uid="uid://chgko4hmxwxu5" path="res://assets/talking_synth.ogg" id="7_1fga6"]
-[ext_resource type="Texture2D" uid="uid://dchimpdsnda13" path="res://assets/emotion_happy.png" id="7_xjvtc"]
-[ext_resource type="Texture2D" uid="uid://bhinvhx75etr2" path="res://assets/emotion_sad.png" id="8_f82xd"]
 
-[sub_resource type="Resource" id="Resource_x7jdx"]
-script = ExtResource("4_2mw05")
-text = "Alright, sayless"
-target_line_idx = 1
-is_quit = false
-
-[sub_resource type="Resource" id="Resource_5yts5"]
+[sub_resource type="Resource" id="Resource_nptyp"]
 script = ExtResource("4_2mw05")
 text = "Nah, I'm good"
 target_line_idx = 2
 is_quit = false
 
-[sub_resource type="Resource" id="Resource_wvhoi"]
-script = ExtResource("6_cu74b")
-choices = Array[ExtResource("4_2mw05")]([SubResource("Resource_x7jdx"), SubResource("Resource_5yts5")])
-expression = ExtResource("6_bayqr")
-character = ExtResource("5_g5y1a")
-text = "[wave]Hey, wake up![/wave] Lets go play tennis!"
-
-[sub_resource type="Resource" id="Resource_wigcd"]
+[sub_resource type="Resource" id="Resource_0nped"]
 script = ExtResource("4_2mw05")
-text = "Fine by me."
-target_line_idx = 3
-is_quit = false
-
-[sub_resource type="Resource" id="Resource_kdcko"]
-script = ExtResource("4_2mw05")
-text = "That's way too much, back to bed."
-target_line_idx = 2
-is_quit = false
-
-[sub_resource type="Resource" id="Resource_gl5b5"]
-script = ExtResource("6_cu74b")
-choices = Array[ExtResource("4_2mw05")]([SubResource("Resource_wigcd"), SubResource("Resource_kdcko")])
-expression = ExtResource("7_xjvtc")
-character = ExtResource("5_g5y1a")
-text = "We will play up to three [b]sets[/b]"
-
-[sub_resource type="Resource" id="Resource_34jjp"]
-script = ExtResource("4_2mw05")
-text = "Stop lying, I'm going back to sleep."
-target_line_idx = 0
-is_quit = false
-
-[sub_resource type="Resource" id="Resource_0uq4f"]
-script = ExtResource("4_2mw05")
-text = "Alright, fine then I'll show you."
+text = "Alright, sayless"
 target_line_idx = 1
 is_quit = false
 
-[sub_resource type="Resource" id="Resource_vldyh"]
+[sub_resource type="Resource" id="Resource_ywk28"]
 script = ExtResource("6_cu74b")
-choices = Array[ExtResource("4_2mw05")]([SubResource("Resource_34jjp"), SubResource("Resource_0uq4f")])
-expression = ExtResource("8_f82xd")
-character = ExtResource("5_g5y1a")
-text = "Bro you're just mad I can beat you."
-
-[sub_resource type="Resource" id="Resource_sqvln"]
-script = ExtResource("4_2mw05")
-text = "Okay!"
-target_line_idx = 0
-is_quit = true
-
-[sub_resource type="Resource" id="Resource_xbd8q"]
-script = ExtResource("6_cu74b")
-choices = Array[ExtResource("4_2mw05")]([SubResource("Resource_sqvln")])
+choices = Array[ExtResource("4_2mw05")]([SubResource("Resource_nptyp"), SubResource("Resource_0nped")])
 expression = ExtResource("6_bayqr")
 character = ExtResource("5_g5y1a")
-text = "Sure! [wave] First to two wins. [/wave]"
+text = "[wave]Hey, wake up![/wave]\\nLets go play tennis!"
+
+[sub_resource type="Resource" id="Resource_wvhoi"]
+script = ExtResource("6_cu74b")
+choices = Array[ExtResource("4_2mw05")]([])
+expression = ExtResource("6_bayqr")
+character = ExtResource("5_g5y1a")
+text = ""
+
+[sub_resource type="Resource" id="Resource_gl5b5"]
+script = ExtResource("6_cu74b")
+choices = Array[ExtResource("4_2mw05")]([])
+expression = ExtResource("6_bayqr")
+character = ExtResource("5_g5y1a")
+text = ""
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_efgpg"]
 shader = ExtResource("3_3nfwl")
@@ -98,7 +59,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_frglg")
 script = ExtResource("2_n1q1t")
-dialogue_items = Array[ExtResource("6_cu74b")]([SubResource("Resource_wvhoi"), SubResource("Resource_gl5b5"), SubResource("Resource_vldyh"), SubResource("Resource_xbd8q")])
+dialogue_items = Array[Object]([SubResource("Resource_ywk28"), SubResource("Resource_wvhoi"), SubResource("Resource_gl5b5")])
 
 [node name="Background" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_efgpg")
