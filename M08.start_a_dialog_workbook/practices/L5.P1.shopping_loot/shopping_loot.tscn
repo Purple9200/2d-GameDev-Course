@@ -1,18 +1,73 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=14 format=3 uid="uid://c33u0kjh46y3d"]
 
-[ext_resource type="Material" path="res://assets/practice_background_material.tres" id="1_unyyy"]
+[ext_resource type="Material" uid="uid://dxrtaju87p2an" path="res://assets/practice_background_material.tres" id="1_unyyy"]
 [ext_resource type="Script" path="res://practices/L5.P1.shopping_loot/shopping_loot.gd" id="2_j4a1h"]
-[ext_resource type="Script" path="res://practices/L5.P1.shopping_loot/shopping_entry.gd" id="3_snsdo"]
-[ext_resource type="Theme" path="res://assets/practices/practices_theme.tres" id="4_8mpo4"]
+[ext_resource type="Script" path="res://practices/L5.P1.shopping_loot/shopping_entry.gd" id="3_wu45b"]
+[ext_resource type="Theme" uid="uid://qk3rjf73qo8w" path="res://assets/practices/practices_theme.tres" id="4_8mpo4"]
+
+[sub_resource type="Resource" id="Resource_gxrp4"]
+script = ExtResource("3_wu45b")
+amount = 1
+price = 20
+text = "SWORD"
+
+[sub_resource type="Resource" id="Resource_8ev8c"]
+script = ExtResource("3_wu45b")
+amount = 1
+price = 15
+text = "SHIELD"
+
+[sub_resource type="Resource" id="Resource_m1vm5"]
+script = ExtResource("3_wu45b")
+amount = 1
+price = 1
+text = "COIN"
+
+[sub_resource type="Resource" id="Resource_qdali"]
+script = ExtResource("3_wu45b")
+amount = 1
+price = 5
+text = "KEY"
+
+[sub_resource type="Resource" id="Resource_2wys8"]
+script = ExtResource("3_wu45b")
+amount = 1
+price = 30
+text = "GEM"
+
+[sub_resource type="Resource" id="Resource_elrbl"]
+script = ExtResource("3_wu45b")
+amount = 1
+price = 99
+text = "SHRIMP"
+
+[sub_resource type="Resource" id="Resource_bhhrm"]
+script = ExtResource("3_wu45b")
+amount = 1
+price = 45
+text = "RING"
+
+[sub_resource type="Resource" id="Resource_lrne8"]
+script = ExtResource("3_wu45b")
+amount = 1
+price = 2
+text = "TORCH"
+
+[sub_resource type="Resource" id="Resource_ojmoe"]
+script = ExtResource("3_wu45b")
+amount = 1
+price = 25
+text = "SCROLL"
 
 [node name="ShoppingLoot" type="ColorRect"]
 material = ExtResource("1_unyyy")
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_j4a1h")
-items_list = Array[ExtResource("3_snsdo")]([])
+items_list = Array[ExtResource("3_wu45b")]([SubResource("Resource_gxrp4"), SubResource("Resource_8ev8c"), SubResource("Resource_m1vm5"), SubResource("Resource_qdali"), SubResource("Resource_2wys8"), SubResource("Resource_elrbl"), SubResource("Resource_bhhrm"), SubResource("Resource_lrne8"), SubResource("Resource_ojmoe")])
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1

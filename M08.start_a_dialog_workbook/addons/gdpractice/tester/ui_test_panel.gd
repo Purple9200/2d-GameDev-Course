@@ -110,7 +110,7 @@ func _prepare_practice_info() -> void:
 	_practice_info.dir_name = Paths.get_dir_name(_practice_info.file_path, Paths.PRACTICES_PATH)
 	_practice_info.base_path = Paths.PRACTICES_PATH.path_join(_practice_info.dir_name)
 
-	for practice_metadata: PracticeMetadata in metadata.list:
+	for practice_metadata: Metadata in metadata.list:
 		var path := Paths.to_practice(practice_metadata.packed_scene_path)
 		if path == _practice_info.file_path:
 			_practice_info.metadata = practice_metadata
