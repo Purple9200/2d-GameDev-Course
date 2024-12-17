@@ -18,8 +18,7 @@ texture = ExtResource("3_f82ok")
 metadata/_edit_lock_ = true
 
 [node name="Circuit" parent="." instance=ExtResource("4_63vq2")]
-position = Vector2(-18, -13)
-metadata/_edit_lock_ = true
+position = Vector2(-18, -11)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("1_eephg")]
 position = Vector2(-143, -273)

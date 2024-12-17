@@ -12,7 +12,7 @@ enum Animations {
 	## A walking animation.
 	WALK,
 	## A faster, run animation.
-	RUN
+	RUN,
 }
 
 ## Determines where the runner character is looking, in radians.

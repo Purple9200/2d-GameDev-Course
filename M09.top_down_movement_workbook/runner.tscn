@@ -72,3 +72,5 @@ position = Vector2(1, 26)
 emitting = false
 process_material = SubResource("ParticleProcessMaterial_7j1se")
 texture = ExtResource("5_eglkq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
