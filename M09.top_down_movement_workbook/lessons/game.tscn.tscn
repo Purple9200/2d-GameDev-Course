@@ -9,7 +9,7 @@
 y_sort_enabled = true
 
 [node name="Runner" parent="." instance=ExtResource("2_as6fo")]
-position = Vector2(163, -122)
+position = Vector2(-496, 315)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
@@ -19,6 +19,7 @@ metadata/_edit_lock_ = true
 
 [node name="Circuit" parent="." instance=ExtResource("4_63vq2")]
 position = Vector2(-18, -13)
+metadata/_edit_lock_ = true
 
 [node name="StaticBody2D" parent="." instance=ExtResource("1_eephg")]
 position = Vector2(-143, -273)
