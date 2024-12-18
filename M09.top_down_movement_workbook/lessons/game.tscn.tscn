@@ -18,7 +18,7 @@ script = ExtResource("1_c6xfv")
 [node name="Runner" parent="." instance=ExtResource("2_as6fo")]
 unique_name_in_owner = true
 process_mode = 1
-position = Vector2(-522, -771)
+position = Vector2(-280, -847)
 
 [node name="Bouncer" parent="." instance=ExtResource("3_15026")]
 unique_name_in_owner = true
@@ -57,7 +57,7 @@ position = Vector2(1386, -266)
 position = Vector2(842, -624)
 
 [node name="StaticBody2D5" parent="Obstacles" instance=ExtResource("1_eephg")]
-position = Vector2(-249, -871)
+position = Vector2(-128, -863)
 
 [node name="StaticBody2D7" parent="Obstacles" instance=ExtResource("1_eephg")]
 position = Vector2(356, -989)

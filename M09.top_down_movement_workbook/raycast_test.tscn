@@ -1,15 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://ex6jj6f4hwi1"]
+[gd_scene load_steps=5 format=3 uid="uid://ex6jj6f4hwi1"]
 
 [ext_resource type="PackedScene" uid="uid://c6kieqaeyf3di" path="res://simple_obstacle.tscn" id="1_ddfcs"]
 [ext_resource type="Script" path="res://ray_cast_2d.gd" id="1_xntwt"]
+[ext_resource type="PackedScene" uid="uid://cveot5bvxbioi" path="res://runner.tscn" id="3_lvkav"]
+[ext_resource type="PackedScene" uid="uid://cuqujninbkfph" path="res://bouncer.tscn" id="4_lskrm"]
 
 [node name="RaycastTest" type="Node2D"]
+
+[node name="Runner" parent="." instance=ExtResource("3_lvkav")]
+position = Vector2(675.768, -123.186)
+
+[node name="Bouncer" parent="." instance=ExtResource("4_lskrm")]
+position = Vector2(-16, -88)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(120, 0)
 script = ExtResource("1_xntwt")
 
 [node name="SimpleObstacle" parent="." instance=ExtResource("1_ddfcs")]
-position = Vector2(182, -57)
+position = Vector2(179, -80)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("1_ddfcs")]
+position = Vector2(178, -358)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("1_ddfcs")]
+position = Vector2(461, -220)
