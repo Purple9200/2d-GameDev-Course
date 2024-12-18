@@ -2,6 +2,8 @@ extends Node2D
 @onready var _count_down: CountDown = %CountDown
 @onready var _runner: Runner = %Runner
 @onready var _finish_line: FinishLine = %FinishLine
+@onready var _bouncer: CharacterBody2D = %Bouncer
+@onready var _hit_box: Area2D = %HitBox
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,6 +34,11 @@ func _ready() -> void:
 		func() -> void:
 			_runner.set_physics_process(true)
 	)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	_bouncer.set_physics_process(false)
+
+	_count_down.counting_finished.connect(
+		func() -> void:
+			_bouncer.set_physics_process(true)
+	)
 func _process(delta: float) -> void:
 	pass
