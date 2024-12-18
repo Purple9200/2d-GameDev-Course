@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bati6hun62brw"]
+[gd_scene load_steps=10 format=3 uid="uid://bati6hun62brw"]
 
 [ext_resource type="Script" path="res://lessons/game.gd" id="1_c6xfv"]
 [ext_resource type="PackedScene" uid="uid://c6kieqaeyf3di" path="res://simple_obstacle.tscn" id="1_eephg"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c8h7b58yph562" path="res://Circuit.tscn" id="4_63vq2"]
 [ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="7_hy1on"]
 [ext_resource type="Script" path="res://assets/countdown/count_down.gd" id="8_0j1s0"]
+[ext_resource type="PackedScene" uid="uid://bar4ka3fta00m" path="res://pause_screen.tscn" id="9_uyq4e"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -67,6 +68,7 @@ position = Vector2(-682, -994)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CountDown" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -83,3 +85,5 @@ text = "Test"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("8_0j1s0")
+
+[node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("9_uyq4e")]
